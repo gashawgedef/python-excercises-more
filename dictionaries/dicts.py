@@ -2,7 +2,7 @@
 
 # This are dictionary excercises with solutions
 """2. Write a Python script to add a key to a dictionary."""
-from unittest import result
+
 
 
 def add_key(dict,key,value):
@@ -111,4 +111,4 @@ def dict_distinict_values(dicts):
 """Write a  Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary."""
 def cobination_of_letters(dicts):
     result=[]
-    
+
