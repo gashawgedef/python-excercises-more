@@ -5,6 +5,10 @@
 
 
 
+from multiprocessing import Value
+from unittest import result
+
+
 def add_key(dict,key,value):
     dict[key]=value
     return dict
@@ -109,6 +113,89 @@ def dict_distinict_values(dicts):
             result.add(value)
     return result
 """Write a  Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary."""
-def cobination_of_letters(dicts):
-    result=[]
+def generate_combinations(data):
+    # Convert dictionary values to a list of lists
+    lists = list(data.values())
+    
+    # Recursive function to generate combinations
+    def combine(current, depth):
+        # If depth equals the length of lists, print the combination
+        if depth == len(lists):
+            print(''.join(current))
+            return
+        # Iterate through the current list and call combine recursively
+        for letter in lists[depth]:
+            combine(current + [letter], depth + 1)
+    
+    # Start the recursion with an empty list and depth 0
+    combine([], 0)
+"""Write a Python program to find the highest 3 values of corresponding keys in a dictionary."""
 
+def highest_three(dicts):
+    sorted_items=sorted(dicts.items(),key=lambda item:item[1],reverse=True)
+    top_3 =sorted_items[:3]
+    return top_3
+"""24. Write a  Python program to create a dictionary from a string.
+Note: Track the count of the letters from the string.
+Sample string : 'w3resource'
+Expected output: {'w': 1, '3': 1, 'r': 2, 'e': 2, 's': 1, 'o': 1, 'u': 1, 'c': 1}"""
+
+def creat_dict_letter(strings):
+     result={}
+     for s in strings:
+         result[s]=strings.count(s)
+     return result
+"""26. Write a Python program to count the values associated with a key in a dictionary.
+"""
+def count_values(students, key, value):
+    count = 0
+    for student in students:
+        if student.get(key) == value:
+            count += 1
+    return count
+"""Write a Python program to convert a list into a nested dictionary of keys."""
+def convert_list_dict(lists):
+    result=current ={}
+    for i in lists:
+        current[i]={}
+        current =current[i]
+    return result
+
+"""Write a Python program to sort a list alphabetically in a dictionary."""
+def sort_alpabetically(dicts):
+    for key, value in dicts.items():
+        dicts[key]=sorted(value)
+    return dicts
+
+"""Write a  Python program to remove spaces from dictionary keys."""
+def remove_spaces(dicts):
+    new_dict={}
+    for key, value in dicts.items():
+        new_key=key.replace(" ","")
+        new_dict[new_key]=value
+    return new_dict
+    
+"""30. Write a Python program to get the top three items in a shop."""
+def top_three_items(dicts):
+    sorted_dicts=sorted(dicts.items(),key=lambda item:item[1],reverse=True)
+    top_three=sorted_dicts[:3]
+    return top_three
+"""Write a  Python program to get the key, value and item in a dictionary."""
+def get_count_key_value(dicts):
+    for key,value in dicts.items():
+        item=(key,value)
+        yield key,value,item
+""" Write a Python program to count the number of items in a dictionary value that is a list"""
+def count_dict_type_list(dicts):
+    count=0
+    for value in dicts.values():
+        if isinstance(value,list):
+            count+=len(value)
+    return count
+
+"""Write a  Python program to sort Counter by value."""
+def sort_by_counter(dicts):
+    sorted_dict=sorted(dicts.items(),key=lambda item:item[1],reverse=True)
+    return sorted_dict
+
+print(sort_by_counter( {'Math':81, 'Physics':83, 'Chemistry':87}))
