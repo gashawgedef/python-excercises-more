@@ -37,9 +37,27 @@ def excercise_6(string):
        else:
            string +="ing"
     return string
-"""7. Write a  Python program to find the first appearance
- of the substrings 'not' and 'poor' in a given string. If 'not' follows 'poor',
-   replace the whole 'not'...'poor' substring with 'good'.
-     Return the resulting string."""
+"""7Write a Python function that takes 
+a list of words and return the longest word and
+ the length of the longest one."""
+def find_longest_word(lists):
+    word_len = []
+    for n in lists:
+        word_len.append((len(n),n))
+    word_len.sort()
+    return word_len[-1][0], word_len[-1][1]
+"""9. Write a Python program to remove the nth index character from a nonempty string.
+"""
+def remove_nth_index_string(string,index):
+    first_part =string[:index]
+    last_part =string[index+1:]
+    return first_part+last_part
 
-print(excercise_6("ga"))
+"""
+Write a Python program to change a given string to a newly string 
+where the first and last chars have been exchanged.
+"""
+def exchange_first_last(str1):
+     return str1[-1:] + str1[1:-1] + str1[:1]
+
+print(exchange_first_last("Shibabaw"))
