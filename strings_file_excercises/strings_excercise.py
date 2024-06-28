@@ -59,5 +59,13 @@ where the first and last chars have been exchanged.
 """
 def exchange_first_last(str1):
      return str1[-1:] + str1[1:-1] + str1[:1]
+"""Write a Python program to remove characters that have odd index values in a given string.
+"""
+def remove_odd_string(str1):
+     result =""
+     for i in range(len(str1)):
+         if i%2==0:
+             result =result+str1[i]
+     return result
 
-print(exchange_first_last("Shibabaw"))
+print(remove_odd_string("Shibabaw"))
