@@ -68,4 +68,88 @@ def remove_odd_string(str1):
              result =result+str1[i]
      return result
 
-print(remove_odd_string("Shibabaw"))
+"""Write a Python program to count the occurrences of each word in a given sentence.
+"""
+def count_occurence(str1):
+    word_list= str1.split(' ')
+    dicts={}
+    for i in word_list:
+        if i in dicts:
+            dicts[i]+=1
+        else:
+            dicts[i] =1
+            
+    return dicts
+
+"""Write a  Python  script that takes input from the user and displays 
+that input back in upper and lower cases.
+"""
+def make_upper_lower(str1):
+    return[str1.lower(),str1.upper()]
+
+"""Write a Python program that accepts a comma-separated sequence of words as input and prints 
+the distinct words in sorted form (alphanumerically).
+
+"""
+def comma_separated_words(str1):
+    words =[word.strip() for word in str1.split(',')]
+    words.sort()
+    return words
+"""Write a Python function to get a string made of 4 copies of the last two characters
+of a specified string (length must be at least 2).
+"""
+def copy_last_two(str1):
+    return str1[-2:]*4
+"""Write a  Python function to get a string made of the first three characters of a specified string.
+If the length of the string is less than 3, return the original string.
+"""
+def first_3_char(str1):
+    if len(str1)>3:
+        return str1[:3]
+    else:
+        return str1
+"""Write a  Python function to reverse a
+string if its length is a multiple of 4.
+"""
+def reverse_str_multiple_4(str1):
+    if len(str1)%4 == 0:
+        return str1[::-1]
+    else:
+        return str1
+
+"""Write a Python function to convert a given string to all uppercase if it contains at least 2
+uppercase characters in the first 4 characters.
+"""
+def count_first_4(str1):
+    count=0
+    letters =str1[:4]
+    for letter in letters:
+        if letter.upper() == letter:
+            count+=1
+    if count >2:
+        return str1.upper()
+    return str1
+        
+"""Write a  Python program to sort a string lexicographically.
+"""
+def sort_strings(str1):
+    string_list =list(str1)
+    string_list.sort()
+    string_list= ''.join(string_list)
+    return  string_list
+
+"""Write a Python program to remove a newline in Python.
+"""
+def remove_new_line(str1):
+    return str1.replace('\n','')
+"""Write a Python program to check whether
+a string starts with specified characters.
+"""
+def check_starts_with(str1,s):
+    return str1.startswith(s)
+"""Write a Python program to create a Caesar encryption.
+"""
+# def caesar_cipher(str1,3):
+    
+    
+print(check_starts_with("Gashaw","Gashaw"))
