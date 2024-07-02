@@ -149,7 +149,9 @@ def check_starts_with(str1,s):
     return str1.startswith(s)
 """Write a Python program to create a Caesar encryption.
 """
+
 # def caesar_cipher(str1,3):
+
     
     
 print(check_starts_with("Gashaw","Gashaw"))
