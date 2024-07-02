@@ -150,7 +150,8 @@ def check_starts_with(str1,s):
 """Write a Python program to create a Caesar encryption.
 """
 
-# def caesar_cipher(str1,3):
+def caesar_cipher(str1):
+    return str1
 
     
     
